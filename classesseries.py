@@ -1,5 +1,8 @@
 
 
+from calendar import weekday
+
+
 class Employee:
     num_of_emps = 0
     raise_amount = 1.04
@@ -16,17 +19,30 @@ class Employee:
    
     def apply_raise(self):
         self.pay = int(self.pay * Employee.raise_amount)   
+    @classmethod
+    def set_raise_amount(cls, amount):
+         cls.raise_amount = amount
+         
+    @classmethod
+    def from_string(cls, emp_str):
+         first, last, pay =emp_str.split('-')
+         return cls(first, last, pay)
+         
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() ==6:
+           return False   
+        return True
+     
+Employee.set_raise_amount(1.05)  
          
 emp_1 = Employee('Corey', 'Schafer', 50000)
 emp_2 = Employee('Test' , 'Ueser' , 60000)
 
-print(Employee.num_of_emps)
-print(emp_1.raise_amount)
-print(emp_2.raise_amount)
 
 
+import datetime
+my_date = datetime.date(2016, 7, 11)
 
-
-
-# test
+print(Employee.is_workday(my_date))
 
