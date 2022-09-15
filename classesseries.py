@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#<#<<<<<< HEAD
 
 
 class Employee:
@@ -31,7 +31,7 @@ print(emp_2.raise_amount)
 
 
 
-=======
+#=======
 
 
 from calendar import weekday
@@ -91,4 +91,4 @@ dev_2 = Developer('Test', 'Employee', 60000)
 #print(Employee.is_workday(my_date))
 
 #test to see if it changes.
->>>>>>> c537467fb1fcfabaa9733ce5ab13b0312b678d95
+##>>>>>>> c537467fb1fcfabaa9733ce5ab13b0312b678d95
